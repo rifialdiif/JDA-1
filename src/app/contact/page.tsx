@@ -104,8 +104,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Email</h3>
-                    <p className="text-gray-600">@myapp.com</p>
-                    <p className="text-gray-600">support@myapp.com</p>
+                    <p className="text-gray-600">compunova@myapp.com</p>
+                    <p className="text-gray-600">support.compunova@myapp.com</p>
                   </div>
                 </div>
 
@@ -118,8 +118,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Address</h3>
-                    <p className="text-gray-600">Jl. Sudirman No. 123</p>
-                    <p className="text-gray-600">Jakarta Pusat, 10220</p>
+                    <p className="text-gray-600">Griya Asri Blok R2 No 24</p>
+                    <p className="text-gray-600">Purwakarta, Jawa Barat</p>
                     <p className="text-gray-600">Indonesia</p>
                   </div>
                 </div>
