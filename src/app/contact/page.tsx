@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Contact() {
+  const [subject, setSubject] = useState("");
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-100">
       <div className="max-w-6xl mx-auto px-4 py-16">
@@ -22,13 +26,13 @@ export default function Contact() {
                   <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
                     First Name
                   </label>
-                  <input type="text" id="firstName" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="John" />
+                  <input type="text" id="firstName" className="w-full px-4 py-3 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder:text-gray-400" placeholder="John" />
                 </div>
                 <div>
                   <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2">
                     Last Name
                   </label>
-                  <input type="text" id="lastName" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Doe" />
+                  <input type="text" id="lastName" className="w-full px-4 py-3 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder:text-gray-400" placeholder="Doe" />
                 </div>
               </div>
 
@@ -36,27 +40,44 @@ export default function Contact() {
                 <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                   Email Address
                 </label>
-                <input type="email" id="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="john@example.com" />
+                <input type="email" id="email" className="w-full px-4 py-3 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder:text-gray-400" placeholder="john@example.com" />
               </div>
 
               <div>
                 <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
                   Phone Number
                 </label>
-                <input type="tel" id="phone" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="+62 812-3456-7890" />
+                <input type="tel" id="phone" className="w-full px-4 py-3 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder:text-gray-400" placeholder="+62 812-3456-7890" />
               </div>
 
               <div>
                 <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
                   Subject
                 </label>
-                <select id="subject" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                  <option value="">Select a subject</option>
-                  <option value="web-development">Web Development</option>
-                  <option value="mobile-app">Mobile App Development</option>
-                  <option value="ui-ux">UI/UX Design</option>
-                  <option value="consultation">Consultation</option>
-                  <option value="other">Other</option>
+                <select
+                  id="subject"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                  className={`w-full px-4 py-3 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${!subject ? "text-gray-400" : "text-gray-900"}`}
+                >
+                  <option value="" className="text-gray-400">
+                    Select a subject
+                  </option>
+                  <option value="web-development" className="text-gray-900">
+                    Web Development
+                  </option>
+                  <option value="mobile-app" className="text-gray-900">
+                    Mobile App Development
+                  </option>
+                  <option value="ui-ux" className="text-gray-900">
+                    UI/UX Design
+                  </option>
+                  <option value="consultation" className="text-gray-900">
+                    Consultation
+                  </option>
+                  <option value="other" className="text-gray-900">
+                    Other
+                  </option>
                 </select>
               </div>
 
@@ -64,7 +85,12 @@ export default function Contact() {
                 <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
                   Message
                 </label>
-                <textarea id="message" rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tell us about your project..."></textarea>
+                <textarea
+                  id="message"
+                  rows={5}
+                  className="w-full px-4 py-3 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder:text-gray-400"
+                  placeholder="Tell us about your project..."
+                ></textarea>
               </div>
 
               <button type="submit" className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
